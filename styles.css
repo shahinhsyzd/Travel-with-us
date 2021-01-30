@@ -1,0 +1,237 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700;900&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    color: #ffffff;
+    font-family: 'Roboto',
+        sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    width: 100%;
+    min-height: 100vh;
+    position: relative;
+    top: 0;
+    left: 0;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('images/show image.jpg');
+    background-position: center;
+    background-size: cover;
+    padding: 0 8%;
+}
+
+.navbar {
+    display: flex;
+    align-items: center;
+    height: 12vh;
+}
+
+.logo {
+    width: 70px;
+    cursor: pointer;
+    transform: rotate(20deg);
+}
+
+.menu {
+    width: 30px;
+    cursor: pointer;
+}
+
+nav {
+    flex: 1;
+    text-align: right;
+}
+
+nav ul li {
+    display: inline-block;
+    margin-right: 30px;
+    list-style-type: none;
+}
+
+nav ul li::after{
+    display: block;
+    content: "";
+    border-bottom: 1px solid #fff;
+    transform: scaleX(0);
+    transition: transform 0.3s ease-in-out;
+}
+
+nav ul li:hover::after {
+    transform: scaleX(1);
+}
+
+
+/* Column 1 */
+
+.columns {
+    min-height: 88vh;
+    display: flex;
+    align-items: center;
+}
+
+.col {
+    /* Read about the flex basis more */
+    flex-basis: 50%;
+    min-height: 88vh;
+}
+
+.col1 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+}
+
+.col1 h1 {
+    text-transform: uppercase;
+    font-size: 4.5rem;
+}
+
+.col1 p {
+    margin: 20px 50px 40px 0;
+    line-height: 1.6em;
+}
+.col1 p:hover{
+    text-decoration:;
+}
+.col1 span {
+    font-style: italic;
+}
+
+.col1 a {
+    padding: 15px 50px;
+    text-transform: uppercase;
+    background: #fff;
+    outline: none;
+    border: none;
+    border-radius: 30px;
+    color: #000;
+}
+
+.col1 a:hover {
+    background: transparent;
+    border: 1px #fff solid;
+    color: #fff;
+}
+
+/* Column 2 */
+
+.col2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    justify-items: center;
+    grid-gap: 15px;
+    padding: 20px 70px;
+}
+
+.card {
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 0 15px #000;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    text-align: center;
+    padding: 15px;
+    position: relative;
+    outline: none;
+}
+.card:hover{
+    transform: translateY(-15px);
+    transition: 0.5s;
+}
+
+.card1 {
+    background-image: url("images/pexels-musa-ortaç-4464601.jpg");
+}
+
+.card2 {
+    background-image: url("images/pexels-amine-m'siouri-2245436.jpg");
+
+}
+
+.card3 {
+    background-image: url("images/pexels-spencer-davis-4388164.jpg");
+}
+
+.card4 {
+    background-image: url("images/pexels-quang-nguyen-vinh-2178175.jpg");
+}
+
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.8802871490393032) 26%, rgba(67, 67, 67, 0.6702031154258579) 49%, rgba(118, 118, 118, 0.1407913507199755) 61%, rgba(255, 255, 255, 0) 100%);
+    opacity: 0.5;
+    border-radius: 10px;
+    transition: 0.5s;
+    outline: none;
+}
+
+.overlay:hover {
+        background-color: unset;
+        opacity: 0;
+        transition: 0.5s;
+}
+
+
+@media(max-width: 991px) {
+    .columns {
+        min-height: 88vh;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .col1 {
+        min-height: 50vh;
+        align-items: center;
+        padding: 50px 0;
+    }
+
+    .col1 h1 {
+        font-size: 4rem;
+    }
+
+    .col1 a {
+        padding: 12px 40px;
+        font-size: 0.9rem;
+    }
+}
+
+@media(max-width: 650px) {
+    nav {
+        text-align: center;
+        padding: 10px 10px 0 10px;
+    }
+    .col1 h1 {
+        font-size: 3rem;
+    }
+
+    .col1 p {
+        margin: 20px 0 40px 0;
+    }
+}
+
+@media(max-width: 500px) {
+    .col2 {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, 1fr);
+        padding: 20px 40px;
+    }
+    .col1 h1 {
+        font-size: 2.5rem;
+    }
+
+    .card p {
+        font-size: 0.8rem;
+    }
+}
